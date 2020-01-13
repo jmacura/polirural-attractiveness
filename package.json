@@ -1,0 +1,53 @@
+{
+  "name": "polirural-attractiveness",
+  "version": "0.0.1",
+  "description": "Rural attractiveness aplication",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node_modules/.bin/csvtojson ../../../data/Attractivity.csv --delimiter=';'  > src/Attractivity.json && node node_modules/hslayers-ng/scripts/bootstrap-isolate.js && node_modules/.bin/webpack --config src/webpack.prod.js",
+    "build-dev": "node node_modules/hslayers-ng/scripts/bootstrap-isolate.js && node_modules/.bin/webpack --config src/webpack.dev.js --progress",
+    "start": "node_modules/.bin/http-server ./dist -p 8080 . > http.log 2>&1 & echo $! > pidfile",
+    "stop": "pkill --pidfile pidfile && rm pidfile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.lesprojekt.cz/raitisbe/polirural-attractiveness.git"
+  },
+  "keywords": [
+    "rural",
+    "attractiveness"
+  ],
+  "author": "Raitis Bērziņš",
+  "license": "MIT",
+  "dependencies": {
+    "csvtojson": "^2.0.10",
+    "hslayers-ng": "^1.10.0",
+    "http-server": "^0.12.0",
+    "webpack": "^4.41.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-angularjs-annotate": "^0.10.0",
+    "clean-webpack-plugin": "^2.0.2",
+    "css-loader": "^2.1.1",
+    "extract-loader": "^3.1.0",
+    "file-loader": "^3.0.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.6.0",
+    "ng-cache-loader": "0.0.26",
+    "npm-run-all": "^4.1.5",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss": "^7.0.14",
+    "postcss-prefix-selector": "^1.7.1",
+    "style-loader": "^0.23.1",
+    "url-loader": "^2.1.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0",
+    "webpack-merge": "^4.2.2"
+  }
+}
