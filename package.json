@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node_modules/.bin/csvtojson ../../../data/Attractivity.csv --delimiter=';'  > src/Attractivity.json && node node_modules/hslayers-ng/scripts/bootstrap-isolate.js && node_modules/.bin/webpack --config src/webpack.prod.js",
     "build-dev": "node node_modules/hslayers-ng/scripts/bootstrap-isolate.js && node_modules/.bin/webpack --config src/webpack.dev.js --progress",
-    "start": "node_modules/.bin/http-server ./dist -p 8080 . > http.log 2>&1 & echo $! > pidfile",
-    "stop": "pkill --pidfile pidfile && rm pidfile"
+    "start": "node_modules/.bin/http-server ./dist -p 8080 ."
   },
   "repository": {
     "type": "git",
