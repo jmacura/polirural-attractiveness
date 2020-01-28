@@ -14,6 +14,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const hslPaths = require(path.join(__dirname, '../node_modules/hslayers-ng/common_paths'));
 
+
 module.exports = {
   entry: { main: 'app.js' },
   output: {
@@ -39,6 +40,8 @@ module.exports = {
       // We manually inject css and js files in our template
       inject: false
       // favicon: 'assets/img/favicon.ico'
+    }),
+    new PurgecssPlugin({
     })
   ],
   module: {

@@ -103,13 +103,12 @@ var nuts3Layer = new VectorLayer({
     style: styles,
     title: 'NUTS3 regions',
 });
-nuts3Layer.set('hoveredKeys', ['NUTS_NAME', 'N_index', 'S_index', 'A_index', 'E_index', 'C_index', 'I_index']);
-nuts3Layer.set('hoveredKeysTranslations', {'NUTS_NAME': 'Name', 'N_index':'Natural', 'S_index': 'Social & Health', 'A_index': 'Anthropic', 'E_index': 'Economical', 'C_index': 'Cultural', 'I_index': 'Institutional'});
-
+nuts3Layer.set('hoveredKeys', ['NUTS_NAME', 'totalForHumans', "Social & Human", "Anthropic", "Institutional", "Economical", "Natural", "Cultural"]);
+nuts3Layer.set('hoveredKeysTranslations', {'NUTS_NAME': 'Name', 'totalForHumans': 'Calculated score'});
 
 
 module.value('config', {
-    proxyPrefix: "/proxy/",
+    proxyPrefix: "../8085/",
     default_layers: [
         new Tile({
             source: new OSM(),
@@ -159,15 +158,14 @@ module.controller('Main', ['$scope', 'Core', '$compile', 'hs.layout.service', 'p
         Core.singleDatasources = true;
         layoutService.sidebarButtons = true;
         layoutService.setDefaultPanel('adjuster');
-        adjusterService.apply();
         $scope.$on("scope_loaded", function (event, args) {
             if (args == 'Sidebar') {
                 var el = angular.element('<pra.adjuster hs.draggable ng-if="Core.exists(\'pra.adjuster\')" ng-show="panelVisible(\'adjuster\', this)"></pra.adjuster>')[0];
-                document.querySelector('#panelplace').appendChild(el);
+                layoutService.panelListElement.appendChild(el);
                 $compile(el)($scope);
 
                 var toolbar_button = angular.element('<div pra.adjuster.sidebar-btn></div>')[0];
-                document.querySelector('.sidebar-list').appendChild(toolbar_button);
+                layoutService.sidebarListElement.appendChild(toolbar_button);
                 $compile(toolbar_button)(event.targetScope);
             }
         })
