@@ -40,8 +40,6 @@ module.exports = {
       // We manually inject css and js files in our template
       inject: false
       // favicon: 'assets/img/favicon.ico'
-    }),
-    new PurgecssPlugin({
     })
   ],
   module: {
