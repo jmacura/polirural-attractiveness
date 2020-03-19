@@ -146,6 +146,9 @@ module.value('config', {
         info: false,
         saveMap: false,
         draw: false
+    }, 
+    searchProvider: (q) => {
+        return `/app/jupyter-test/8085/search/?q=${q}`
     }
 });
 
