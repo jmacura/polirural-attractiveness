@@ -1,5 +1,5 @@
 // import attractivity from '../Attractivity.json';
-import nuts from 'nuts';
+import nuts from '../nuts';
 
 export default ['Core', 'hs.utils.service', '$rootScope', '$http',
   function (Core, utils, $rootScope, $http) {

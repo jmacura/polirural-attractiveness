@@ -16,7 +16,7 @@ import { OSM } from 'ol/source';
 import { Style, Stroke, Fill } from 'ol/style';
 import VectorLayer from 'ol/layer/Vector';
 import './adjuster/adjuster.module';
-import nuts from 'nuts';
+import nuts from './nuts';
 
 const module = angular.module('hs', [
   'hs.sidebar',
