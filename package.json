@@ -1,27 +1,30 @@
 {
   "name": "polirural-attractiveness",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Rural attractiveness aplication",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node node_modules/hslayers-ng/scripts/bootstrap-isolate.js && node_modules/.bin/webpack --config src/webpack.prod.js",
-    "build-dev": "node node_modules/hslayers-ng/scripts/bootstrap-isolate.js && node_modules/.bin/webpack --config src/webpack.dev.js --progress",
-    "start": "node_modules/.bin/http-server ./dist -p 8080 ."
+    "build": "node node_modules/hslayers-ng/scripts/bootstrap-isolate.js && npx webpack --config src/webpack.prod.js --progress",
+    "build-dev": "node node_modules/hslayers-ng/scripts/bootstrap-isolate.js && npx webpack --config src/webpack.dev.js --progress",
+    "start": "npx http-server ./static -p 8080",
+    "start-dev": "npx webpack-dev-server --config src/webpack.dev.js --watch"
   },
   "repository": {
     "type": "git",
-    "url": "https://git.lesprojekt.cz/raitisbe/polirural-attractiveness.git"
+    "url": "https://github.com/jmacura/polirural-attractiveness.git"
   },
   "keywords": [
     "rural",
     "attractiveness"
   ],
-  "author": "Raitis Bērziņš",
+  "author": "Jan Macura",
+  "contributors": ["Raitis Bērziņš"],
   "license": "MIT",
   "dependencies": {
     "csvtojson": "^2.0.10",
-    "hslayers-ng": "^1.16.0"
+    "hslayers-ng": "^1.16.0",
+    "http-server": "^0.12.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
