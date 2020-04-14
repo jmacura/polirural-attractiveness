@@ -2,13 +2,13 @@
   "name": "polirural-attractiveness",
   "version": "0.1.0",
   "description": "Rural attractiveness aplication",
-  "main": "index.html",
+  "main": "build/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node node_modules/hslayers-ng/scripts/bootstrap-isolate.js && npx webpack --config src/webpack.prod.js --progress",
-    "build-dev": "node node_modules/hslayers-ng/scripts/bootstrap-isolate.js && npx webpack --config src/webpack.dev.js --progress",
+    "build": "node node_modules/hslayers-ng/scripts/bootstrap-isolate.js && npx webpack --config ./webpack.prod.js --progress",
+    "build-dev": "node node_modules/hslayers-ng/scripts/bootstrap-isolate.js && npx webpack --config ./webpack.dev.js --progress",
     "start": "npx http-server ./static -p 8080",
-    "start-dev": "npx webpack-dev-server --config src/webpack.dev.js --watch"
+    "start-dev": "npx webpack-dev-server --config ./webpack.dev.js --watch"
   },
   "repository": {
     "type": "git",
