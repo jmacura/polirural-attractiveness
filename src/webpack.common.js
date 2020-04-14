@@ -14,7 +14,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const hslPaths = require(path.join(__dirname, '../node_modules/hslayers-ng/common_paths'));
 
-
 module.exports = {
   entry: { main: 'app.js' },
   output: {
@@ -24,12 +23,14 @@ module.exports = {
     publicPath: ''
   },
   // Just for build speed improvement
-  resolve: { symlinks: true,
+  resolve: {
+    symlinks: true,
     modules: [
       path.join(__dirname),
-      path.join(__dirname, "../node_modules"),
-      path.resolve(path.join(__dirname, "../node_modules", "hslayers-ng"))
-    ].concat(hslPaths.paths)},
+      path.join(__dirname, '../node_modules'),
+      path.resolve(path.join(__dirname, '../node_modules', 'hslayers-ng'))
+    ].concat(hslPaths.paths)
+  },
   plugins: [
     // Clean before build
     new CleanWebpackPlugin(),

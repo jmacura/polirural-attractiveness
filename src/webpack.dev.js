@@ -10,7 +10,6 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
 const path = require('path');
-const webpack = require('webpack');
 const env = process.env;
 
 module.exports = merge(common, {
@@ -96,4 +95,4 @@ module.exports = merge(common, {
       }
     ]
   }
-})
+});
